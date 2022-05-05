@@ -18,6 +18,7 @@ function builder () {
   title.innerText = 'Virtual Keyboard';
   const textArea = document.createElement('textarea');
   textArea.classList.add('textarea');
+  textArea.innerHTML = '';
   const keyboardContainer = document.createElement('div');
   keyboardContainer.classList.add('keyboard-container');
   const textOS = document.createElement('p');
@@ -41,13 +42,14 @@ function builder () {
     row.classList.add('row');
     keyboardContainer.append(row);
     i.forEach((e) => {
-      const button = document.createElement('div');
+      const button = document.createElement('button');
       button.classList.add('button');
       button.innerHTML = e;
       row.append(button);
     });
   })
   longer();
+  clicker();
 }
 
 function longer () {
@@ -59,11 +61,42 @@ function longer () {
   btns[41].classList.add('shift');
   btns[53].classList.add('shift');
   btns[57].classList.add('space');
-  console.log(btns)
 }
 
-document.addEventListener('keydown', keyCode());
 
-function keyCode (event) {
-    console.log(event.key)
+
+function clicker () {
+  const textAr = document.querySelector('.textarea');
+  val = textAr.value;
+  console.log(val)
+  const keys = document.querySelectorAll('.button');
+  keys.forEach(i => {i.addEventListener('click', btnClick)});
 }
+
+function btnClick (event) {
+  const textAr = document.querySelector('.textarea');
+  val = textAr.value;
+  val1 = textAr.innerHTML;
+  if (event.target.innerText == 'Space') {
+    textAr.innerHTML = val1 + ' ';
+  } else if (event.target.innerText == 'Tab') {
+    textAr.innerHTML = val1 + '    ';
+  } else if (event.target.innerText == 'BackSpace') {
+    textAr.innerHTML = val1.slice(0, -1);
+  } else if (event.target.innerText == 'Enter') {
+    textAr.innerHTML = val1 + '&#10;';
+  } else if (event.target.innerText == 'Shift') {
+    textAr.innerHTML = val;
+  } else if (event.target.innerText == 'Ctrl') {
+    textAr.innerHTML = val;
+  } else if (event.target.innerText == 'Alt') {
+    textAr.innerHTML = val;
+  } else if (event.target.innerText == '⊞') {
+    textAr.innerHTML = val;
+  }
+   else {
+    textAr.innerHTML = val1 + event.target.innerText;
+  }
+  
+}
+
