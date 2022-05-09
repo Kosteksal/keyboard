@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+body {
+    background-color: #e0e2d6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    color: darkslateblue;
+    font-size: 4em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.textarea {
+    height: 200px;
+    width: 900px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    color: darkslateblue;
+    font-size: 30px;
+    border: 4px solid black;
+}
+
+.keyboard-container {
+    height: 300px;
+    width: 900px;
+    border: 4px solid royalblue;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #c5e1a570;
+}
+
+.btnContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.clBtn {
+    height: 20px;
+    width: 60px;
+    border: 3px solid royalblue;
+    border-radius: 4px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.clBtn:hover {
+    background-color: #fff;
+}
+
+.clBtn:active {
+    box-shadow: 1px 2px 3px 2px rgba(34, 60, 80, 0.25);
+}
+
+.langBtn {
+    height: 20px;
+    width: 60px;
+    border: 3px solid royalblue;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.langBtn:hover {
+    background-color: #fff;
+}
+
+.langBtn:active {
+    box-shadow: 1px 2px 3px 2px rgba(34, 60, 80, 0.25);
+}
+
+.text {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    color: darkslateblue;
+    font-size: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(50 76 100);
+    margin: 5px;
+    color: azure;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 250%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 1px 2px 3px 2px rgba(34, 60, 80, 0.25);
+    border: none;
+}
+
+.button:hover {
+    background-color: rgb(77, 111, 143);
+}
+
+.button:active {
+    box-shadow: 1px 2px 33px 2px rgba(6, 29, 46, 0.95);
+}
+
+.backspace {
+    width: 90px;
+}
+
+.tab {
+    width: 90px;
+}
+
+.caps {
+    width: 92px;
+}
+
+.caps-active {
+    background-color: rgb(77, 111, 143);
+    box-shadow: 1px 2px 33px 2px rgba(6, 29, 46, 0.95);
+}
+
+.enter {
+    width: 103px;
+}
+
+.shift {
+    width: 97px;
+}
+
+.space {
+    width: 290px;
+}
