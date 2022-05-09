@@ -4,3 +4,4 @@ logs
 .eslintrc
 package-lock.json
 package.json
+.vscode/
