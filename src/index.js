@@ -21,6 +21,133 @@ function longer() {
   btns[57].classList.add('space');
 }
 
+function shifter() {
+  const btns = document.querySelectorAll('.button');
+  const keyboardContainer = document.querySelector('.keyboard-container');
+  if (btns[0].innerHTML === '~') {
+    buttons = [
+      ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'BackSpace'],
+      ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '&#92;'],
+      ['Caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '&#8242;', 'Enter'],
+      ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '&#8593;', 'Shift'],
+      ['Ctrl', '&#8862;', 'Alt', 'Space', 'Alt', 'Ctrl', '&#8592;', '&#8595;', '&#8594;'],
+    ];
+    keyboardContainer.innerHTML = '';
+    buttons.forEach((i) => {
+      const row = document.createElement('div');
+      row.classList.add('row');
+      keyboardContainer.append(row);
+      i.forEach((e) => {
+        const button = document.createElement('button');
+        button.classList.add('button');
+        button.innerHTML = e;
+        row.append(button);
+      });
+    });
+    longer();
+  }
+  if (btns[0].innerHTML === '`') {
+    buttons = [
+      ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'BackSpace'],
+      ['Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|'],
+      ['Caps', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', 'Enter'],
+      ['Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', '&#8593;', 'Shift'],
+      ['Ctrl', '&#8862;', 'Alt', 'Space', 'Alt', 'Ctrl', '&#8592;', '&#8595;', '&#8594;'],
+    ];
+    keyboardContainer.innerHTML = '';
+
+    buttons.forEach((i) => {
+      const row = document.createElement('div');
+      row.classList.add('row');
+      keyboardContainer.append(row);
+      i.forEach((e) => {
+        const button = document.createElement('button');
+        button.classList.add('button');
+        button.innerHTML = e;
+        row.append(button);
+      });
+    });
+    longer();
+    document.querySelectorAll('.button')[28].classList.add('caps-active');
+  }
+  if (btns[0].innerHTML === 'ё') {
+    buttons = [
+      ['Ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'BackSpace'],
+      ['Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '|'],
+      ['Caps', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter'],
+      ['Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', ',', '&#8593;', 'Shift'],
+      ['Ctrl', '&#8862;', 'Alt', 'Space', 'Alt', 'Ctrl', '&#8592;', '&#8595;', '&#8594;'],
+    ];
+    keyboardContainer.innerHTML = '';
+
+    buttons.forEach((i) => {
+      const row = document.createElement('div');
+      row.classList.add('row');
+      keyboardContainer.append(row);
+      i.forEach((e) => {
+        const button = document.createElement('button');
+        button.classList.add('button');
+        button.innerHTML = e;
+        row.append(button);
+      });
+    });
+    longer();
+    document.querySelectorAll('.button')[28].classList.add('caps-active');
+  }
+  if (btns[0].innerHTML === 'Ё') {
+    buttons = [
+      ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'BackSpace'],
+      ['Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '&#92;'],
+      ['Caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'],
+      ['Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '&#8593;', 'Shift'],
+      ['Ctrl', '&#8862;', 'Alt', 'Space', 'Alt', 'Ctrl', '&#8592;', '&#8595;', '&#8594;'],
+    ];
+    keyboardContainer.innerHTML = '';
+    buttons.forEach((i) => {
+      const row = document.createElement('div');
+      row.classList.add('row');
+      keyboardContainer.append(row);
+      i.forEach((e) => {
+        const button = document.createElement('button');
+        button.classList.add('button');
+        button.innerHTML = e;
+        row.append(button);
+      });
+    });
+    longer();
+  }
+  const keys = document.querySelectorAll('.button');
+  keys.forEach((i) => {
+    i.addEventListener('click', (event) => {
+      const textAr = document.querySelector('.textarea');
+      const val = textAr.value;
+      const val1 = textAr.innerHTML;
+      if (event.target.innerText === 'Space') {
+        textAr.innerHTML = `${val1} `;
+      } else if (event.target.innerText === 'Tab') {
+        textAr.innerHTML = `${val1}    `;
+      } else if (event.target.innerText === 'BackSpace') {
+        textAr.innerHTML = val1.slice(0, -1);
+      } else if (event.target.innerText === 'Enter') {
+        textAr.innerHTML = `${val1}&#10;`;
+      } else if (event.target.innerText === 'Shift') {
+        textAr.innerHTML = val;
+      } else if (event.target.innerText === 'Ctrl') {
+        textAr.innerHTML = val;
+      } else if (event.target.innerText === 'Alt') {
+        textAr.innerHTML = val;
+      } else if (event.target.innerText === '⊞') {
+        textAr.innerHTML = val;
+      } else if (event.target.innerText === 'Caps') {
+        textAr.innerHTML = val;
+        shifter();
+      } else {
+        textAr.innerHTML = val1 + event.target.innerText;
+      }
+    });
+  });
+}
+
 function btnClick(event) {
   const textAr = document.querySelector('.textarea');
   const val = textAr.value;
@@ -46,111 +173,6 @@ function btnClick(event) {
     shifter();
   } else {
     textAr.innerHTML = val1 + event.target.innerText;
-  }
-}
-
-function shifter() {
-  const btns = document.querySelectorAll('.button');
-  const keyboardContainer = document.querySelector('.keyboard-container');
-  if (btns[0].innerHTML === '~') {
-    buttons = [
-      ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'BackSpace'],
-      ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '&#92;'],
-      ['Caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '&#8242;', 'Enter'],
-      ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '&#8593;', 'Shift'],
-      ['Ctrl', '&#8862;', 'Alt', 'Space', 'Alt', 'Ctrl', '&#8592;', '&#8595;', '&#8594;'],
-    ];
-    keyboardContainer.innerHTML = '';
-    buttons.forEach((i) => {
-      const row = document.createElement('div');
-      row.classList.add('row');
-      keyboardContainer.append(row);
-      i.forEach((e) => {
-        const button = document.createElement('button');
-        button.classList.add('button');
-        button.innerHTML = e;
-        row.append(button);
-      });
-    });
-    longer();
-    const keys = document.querySelectorAll('.button');
-    keys.forEach((i) => { i.addEventListener('click', btnClick); });
-  }
-  if (btns[0].innerHTML === '`') {
-    buttons = [
-      ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'BackSpace'],
-      ['Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|'],
-      ['Caps', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', 'Enter'],
-      ['Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', '&#8593;', 'Shift'],
-      ['Ctrl', '&#8862;', 'Alt', 'Space', 'Alt', 'Ctrl', '&#8592;', '&#8595;', '&#8594;'],
-    ];
-    keyboardContainer.innerHTML = '';
-
-    buttons.forEach((i) => {
-      const row = document.createElement('div');
-      row.classList.add('row');
-      keyboardContainer.append(row);
-      i.forEach((e) => {
-        const button = document.createElement('button');
-        button.classList.add('button');
-        button.innerHTML = e;
-        row.append(button);
-      });
-    });
-    longer();
-    const keys = document.querySelectorAll('.button');
-    keys.forEach((i) => { i.addEventListener('click', btnClick); });
-    document.querySelectorAll('.button')[28].classList.add('caps-active');
-  }
-  if (btns[0].innerHTML === 'ё') {
-    buttons = [
-      ['Ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'BackSpace'],
-      ['Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '|'],
-      ['Caps', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter'],
-      ['Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', ',', '&#8593;', 'Shift'],
-      ['Ctrl', '&#8862;', 'Alt', 'Space', 'Alt', 'Ctrl', '&#8592;', '&#8595;', '&#8594;'],
-    ];
-    keyboardContainer.innerHTML = '';
-
-    buttons.forEach((i) => {
-      const row = document.createElement('div');
-      row.classList.add('row');
-      keyboardContainer.append(row);
-      i.forEach((e) => {
-        const button = document.createElement('button');
-        button.classList.add('button');
-        button.innerHTML = e;
-        row.append(button);
-      });
-    });
-    longer();
-    const keys = document.querySelectorAll('.button');
-    keys.forEach((i) => { i.addEventListener('click', btnClick); });
-    document.querySelectorAll('.button')[28].classList.add('caps-active');
-  }
-  if (btns[0].innerHTML === 'Ё') {
-    buttons = [
-      ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'BackSpace'],
-      ['Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '&#92;'],
-      ['Caps', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'],
-      ['Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '&#8593;', 'Shift'],
-      ['Ctrl', '&#8862;', 'Alt', 'Space', 'Alt', 'Ctrl', '&#8592;', '&#8595;', '&#8594;'],
-    ];
-    keyboardContainer.innerHTML = '';
-    buttons.forEach((i) => {
-      const row = document.createElement('div');
-      row.classList.add('row');
-      keyboardContainer.append(row);
-      i.forEach((e) => {
-        const button = document.createElement('button');
-        button.classList.add('button');
-        button.innerHTML = e;
-        row.append(button);
-      });
-    });
-    longer();
-    const keys = document.querySelectorAll('.button');
-    keys.forEach((i) => { i.addEventListener('click', btnClick); });
   }
 }
 
